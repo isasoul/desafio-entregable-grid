@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Permanent+Marker&family=Red+Hat+Display&family=Ubuntu+Mono&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: black;
+  }
+    /*-----index--------*/
+.body__container{
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 600px 150px;
+    grid-template-areas: 
+        "header header header"
+        " main   main   main"
+        "footer footer footer";
+}
+/*estilos header*/
+.header__nav{
+    grid-area: header;
+    background-color: black;
+    font-size: 20rem;
+    padding-top: 3rem ;
+}
+.nav__list{
+    display: flex;
+    justify-content: center;
+
+}
+.list__pages{
+    list-style-type:none;
+    display: flex;
+    justify-content: center;
+}
+.list__link--page{
+    color: rgba(241, 224, 224, 0.637);
+    padding: 2rem;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+/*fin estilos nav*/
+/*estilos main*/
+.main__container{
+grid-area:main;
+display: flex;
+justify-content: flex-end;
+}
+/*seccion de imagen*/
+.section__img{
+    background-color: black;
+    padding-right: 1rem;
+    display: flex;
+}
+.card__img{
+    height: 50rem;
+    width: 55rem;
+    display: flex;
+    border-radius: 75%;
+    width: 85%;
+    }
+/*seccion del titulo*/
+.section__title{
+    background-color: black;
+    color: #fff;
+    text-align:center;
+    font-family:'Red Hat Display', sans-serif;
+    padding: 10rem;
+    display: flex;
+    font-size: 12rem;
+}
+.card__title{
+    display: flex;
+    background-color: black;
+}
+
+/*fin estilos main*/
+/*estilos footer*/
+.footer__container{
+    grid-area: footer;
+    background-color: black;
+    font-size: 20rem;
+    }
+.footer__section--media{
+    display: flex;
+    justify-content: center;
+}
+.list__nav--media{
+    list-style-type:none;
+    display: flex;
+}
+.link__media{
+    color: #fff;
+    padding: 2rem;
+
+}
+
+/*ESTILOS GALERIA-------------*/
+
+.gallery-title{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+    padding: 20px;
+}
+.gallery-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    /*gap*/
+    column-gap: 5px;
+    overflow: hidden;
+ }
+
+.gallery-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.img-4{
+    grid-column-start: span 2;
+}
+.img-5{
+ grid-row-start: span 2;
+}
+.img-9{
+    grid-column-start: span 2;
+
+}
+.gallery-item{
+    position: relative;
+    padding: 4px;
+}
+
+.gallery-tittle{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(12, 11, 11, 0.486);
+    width: 100%;
+    padding: 5px 0;
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
+}
+/*mobile*/
+@media (max-width:450px){
+    .body__container{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows:auto;
+    }
+    .card__img{
+        height: 25rem;
+        width: 30rem;
+        display: flex;
+        border-radius: 70%;
+        width: 80%;
+        }
+    /*------estilos galeria----------*/
+    .gallery-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px; 
+     }
+        
+    .gallery-title{
+        font-size: 22px;
+    }
+    .gallery-tittle{
+        font-size: 18px;
+    }
+    .gallery-item{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+
+}
+/*tablet*/
+
+@media (min-width:451px) and (max-width:960px){
+
+  .gallery-container{
+        display: grid;
+        grid-template-columns: repeat(1, 2fr);
+        grid-auto-rows: 220px;
+    }
+
+    .gallery-item{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .img-9{
+        grid-column: span 1;
+    }
+    .gallery-title{
+        font-size: 22px;
+    }
+    .gallery-tittle{
+        font-size: 18px;
+    }
+}
